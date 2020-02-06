@@ -138,9 +138,7 @@ public class GameWindow extends JFrame {
         placementMan.add(placementManItems[0]);
         placementMan.add(placementManItems[1]);
         placementRobot.add(placementRobotItems[0]);
-        placementRobot.add(placementRobotItems[1]);
         robotShootingMethod.add(robotShootingMethodItems[0]);
-        robotShootingMethod.add(robotShootingMethodItems[1]);
         settings.add(placementMan);
         settings.add(placementRobot);
         settings.add(robotShootingMethod);
@@ -224,9 +222,7 @@ public class GameWindow extends JFrame {
         placementMan.add(placementManItems[0]);
         placementMan.add(placementManItems[1]);
         placementRobot.add(placementRobotItems[0]);
-        placementRobot.add(placementRobotItems[1]);
         robotShootingMethod.add(robotShootingMethodItems[0]);
-        robotShootingMethod.add(robotShootingMethodItems[1]);
         settings.add(placementMan);
         settings.add(placementRobot);
         settings.add(robotShootingMethod);
