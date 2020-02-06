@@ -1,5 +1,7 @@
 package model;
 
+import view.TextView;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -40,7 +42,8 @@ public class Field {
     void placeShipsByUser(Ship[][] ships, TextView textView){
         for (int i = 0; i < 4; i++){
             for (int j = 0; j < ships[i].length; j++){
-                int upperLeftX, upperLeftY, deckQty;
+                int upperLeftX, deckQty;
+                int upperLeftY = -1;
                 boolean isHorizontal = true;
                 String isHorizontalStr;
                 do {
@@ -63,7 +66,7 @@ public class Field {
                         String upperLeftCorner = (new Scanner(System.in)).nextLine();
                         upperLeftX = upperLeftCorner.charAt(0) - 97;
                         upperLeftX = upperLeftCorner.charAt(1) - 49;
-                        if (upperLeftCorner.length() > 2) upperLeftY = (upperLeftCorner.charAt(1) - 48) * 10 + upperLeftCorner.charAt(2) - 49;
+                        if (upperLeftCorner.length() > 2) upperLeftY = ((upperLeftCorner.charAt(1) - 48) * 10 + upperLeftCorner.charAt(2) - 49);
                         if (upperLeftX < 0 || upperLeftX > 9 || upperLeftY < 0 || upperLeftY > 9) error = true;
                         if (error) System.out.println("Значение за пределами поля. Повторите ввод.");
                     } while (error);
@@ -71,7 +74,7 @@ public class Field {
                         System.out.println("Нельзя распологать корабль таким образом. Повторите");
                 } while (!checkFreeSpace(upperLeftX, upperLeftY, deckQty, isHorizontal, this));
                 ships[i][j] = new Ship(this.cells[upperLeftX][upperLeftY], deckQty, isHorizontal, this);
-                textView.showField(this.player, true);
+                textView.showPartSea(this.player, true);
             }
         }
     }

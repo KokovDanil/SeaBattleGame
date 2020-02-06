@@ -23,8 +23,8 @@ public class Point {
     }
 
     public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.setX(x);
+        this.setY(y);
     }
 
     public static Point getRandomPoint() {
